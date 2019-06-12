@@ -1,7 +1,7 @@
 # TODO: Fill in your campus here
 CAMPUS = {
-    name: "",
-    address: "",
+    "name": "DC",
+    address: "1440 G Street, Washington DC",
 }
 
 SUBSCRIBERS = ["rhona@grimes.info", "cedricschmidt@robel.io", "edmond@ko.org", "bryant@cummingsfisher.biz", "alverta@bernhard.name", "lucinda@beckerbogisich.biz", "wilhelminaullrich@hartmann.info", "shelby@kuhlmankilback.co", "royhoeger@wolff.org", "katheruecker@lockman.net", "benedictblanda@collierkuhn.net", "ivory@collins.com", "argelia@vonruedenparisian.biz", "bo@rippin.net", "alfonzoklein@robel.io", "forest@herman.name", "denishahn@west.org", "alfredbrown@wuckert.net", "joan@jacobi.co", "trinidad@macgyver.co", "shaynepurdy@schaeferwisozk.co", "kianafritsch@lesch.biz", "idella@ankunding.info", "raymundoruel@legros.net", "thomasenaboehm@keeling.net", "lynwood@lakin.biz", "julianpadberg@mosciski.com", "coleen@cormierparker.com", "luiswisoky@mcdermottpadberg.com", "gaylebogan@considine.net"]
