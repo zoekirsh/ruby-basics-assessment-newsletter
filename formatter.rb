@@ -22,7 +22,6 @@ def format_article(article)
 end
 
 def format_footer(campus)
-    "Work hard, be nice, and have an epic week! //" + 
-    "\n" +
+    "Work hard, be nice, and have an epic week! //\n" +
     "Flatiron School · #{campus[:name]} · #{campus[:address]} "
 end
