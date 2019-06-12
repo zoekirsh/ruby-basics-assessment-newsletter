@@ -22,7 +22,7 @@ def run
 end
 
 def still_subscribed
-    SUBSCRIBERS.filter { |email| UNSUBSCRIBED.include?(email) }
+    SUBSCRIBERS.filter { |email| !UNSUBSCRIBED.include?(email) }
 end
 
 def print_recipients

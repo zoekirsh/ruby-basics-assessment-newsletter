@@ -16,9 +16,6 @@ def format_week
     today.strftime "%b %d, %Y"
 end
 
-# return a string with the formatted article
-# argument will be a hash with author, title, text, section, and link
-# returned should be a string with title, byline, and first 200 characters of article text
 def format_article(article)
    "#{article[:title]}\n" +
    "by: #{article[:author]}\n" +
