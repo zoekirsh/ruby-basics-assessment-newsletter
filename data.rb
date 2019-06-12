@@ -1,0 +1,5 @@
+ARTICLES = [{
+    author: "",
+    title: "",
+    text: "",
+}]
