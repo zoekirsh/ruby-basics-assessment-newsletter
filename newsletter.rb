@@ -21,21 +21,28 @@ def run
     print_newsletter
 end
 
+def still_subscribed
+    SUBSCRIBERS.filter { |email| UNSUBSCRIBED.include?(email) }
+end
+
 def print_recipients
-    still_subscribed = SUBSCRIBERS - UNSUBSCRIBED
     puts still_subscribed.join(", ")
 end
 
 def print_subject
-    puts "Flatiron #{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
+    puts format_header
 end
 
-def print_newsletter
-    puts "Flatiron #{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
-    puts "\n"
+def print_articles
     ARTICLES.each do |article|
         puts format_article(article)
     end
+end
+
+def print_newsletter
+    puts format_header
+    puts "\n"
+    print_articles
     puts format_footer(CAMPUS)
 end
 

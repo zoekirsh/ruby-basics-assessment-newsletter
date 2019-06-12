@@ -3,6 +3,10 @@
 
 require 'date'
 
+def format_header
+    "Flatiron #{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
+end
+
 def format_campus_location(campus)
     campus[:name]
 end
