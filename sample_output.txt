@@ -1,9 +1,9 @@
 Generating this week's newsletter...
 
 Recipients: rhona@grimes.info, cedricschmidt@robel.io, edmond@ko.org, bryant@cummingsfisher.biz, alverta@bernhard.name, lucinda@beckerbogisich.biz, shelby@kuhlmankilback.co, katheruecker@lockman.net, benedictblanda@collierkuhn.net, ivory@collins.com, argelia@vonruedenparisian.biz, alfonzoklein@robel.io, forest@herman.name, denishahn@west.org, alfredbrown@wuckert.net, joan@jacobi.co, trinidad@macgyver.co, shaynepurdy@schaeferwisozk.co, kianafritsch@lesch.biz, raymundoruel@legros.net, thomasenaboehm@keeling.net, coleen@cormierparker.com, luiswisoky@mcdermottpadberg.com, gaylebogan@considine.net
-Subject: Flatiron DC Newsletter - Jun 12, 2019
+Subject: Flatiron Springfield Newsletter - Jun 12, 2019
 Body:
-Flatiron DC Newsletter - Jun 12, 2019
+Flatiron Springfield Newsletter - Jun 12, 2019
 
 Mining
 by: Destiny Blanda Bruen II
@@ -34,4 +34,4 @@ by: Tony Keeling Cartwright
 Often people, especially computer engineers, focus on the machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines.
 
 Work hard, be nice, and have an epic week! //
-Flatiron School · DC · 1440 G Street, Washington DC 
+Flatiron School · Springfield · 171 Maple St, Springfield, MA 01105 

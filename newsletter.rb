@@ -7,7 +7,7 @@
 # etc.
 # See sample_output.txt for sample output
 
-require_relative 'data.rb'
+require_relative 'sample_data.rb'
 require_relative 'formatter.rb'
 
 def run
