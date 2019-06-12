@@ -16,13 +16,12 @@ The program you are working with is a command line tool to help generate newslet
 
 ## Instructions
 
-Syntax error in one file - debug the syntax error
-Logic error in one file - debug the logic error
-Missing array functionality in file - add functionality
-Missing hashes functionality in file - add functionality
-Missing enumerables functionality in file - add functionality
-Run code to test that it matches output specified by instructions
-Run code to generate some output based on input - output should be submitted
+1. Fix syntax error in `formatter.rb`
+2. Fix the `format_campus_location` and `format_footer` methods so that they work
+3. Fix logic error in calculating the recipients
+4. Write the body of the format_article function
+5. Write the missing functionality to print all the articles
+6. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 ## Rubric
 
