@@ -16,12 +16,14 @@ The program you are working with is a command line tool to help generate newslet
 
 ## Instructions
 
-1. Fix syntax error in `formatter.rb`
-2. Fix the `format_campus_location` and `format_footer` methods so that they work
-3. Fix logic error in calculating the recipients
-4. Write the body of the format_article function
-5. Write the missing functionality to print all the articles
-6. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
+1. Fix syntax errors in `newsletter.rb` so that it runs without errors with `$ ruby newsletter.rb`
+2. Fix the `format_campus_location` method so that it has the correct output
+3. Fix the `format_footer` method so that it has the correct output
+4. Fix logic error in `calculate_recipients`
+5. Write the body of `print_recipients` to print out the recipients
+6. Write the body of `format_article` to return a string with the formatted article
+7. Write the rest of the `print_newsletter` method to print all the articles
+8. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 ## Rubric
 
