@@ -74,6 +74,8 @@ The title comes first. On the next line is the byline, `by: [author]`. On the fo
 
 Print the list of articles stored in the `ARTICLES` constant. All of them should be formatted as in the `format_article` method.
 
+### 8. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
+
 If you'd like to see if there are any differences between the results, you can run `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
 
 **After you check that you are getting the right output, commit your solution.** That way you have a snapshot of your working version before you make any further changes.
