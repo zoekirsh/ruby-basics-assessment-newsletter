@@ -1,6 +1,6 @@
 # Ruby Basics Assessment - Newsletter
 
-This assessment is designed to test your understanding of the basics of Ruby. It covers
+This assessment is designed to test your understanding of the basics of Ruby. It covers:
 
 - Ruby Syntax Basics
 - Problem Solving and Debugging in Ruby
@@ -8,7 +8,7 @@ This assessment is designed to test your understanding of the basics of Ruby. It
 
 Read these instructions carefully. They describe the code you'll be working with and what you need to do.
 
-At the bottom of this file is the rubric used to evaluate your submission. You do not need to get everything right. Focus on getting each piece of code to work rather than writing partial solutions to each
+At the bottom of this file is the rubric used to evaluate your submission. You do not need to get everything right. Focus on getting each piece of code to work rather than writing partial solutions to each.
 
 ## Introduction
 
@@ -78,7 +78,7 @@ Print the list of articles stored in the `ARTICLES` constant. All of them should
 
 If you'd like to see if there are any differences between the results, you can run `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
 
-After you check that you are getting the right output, commit your solution. That way you have a snapshot of your working version before you make any further changes.
+**After you check that you are getting the right output, commit your solution.** That way you have a snapshot of your working version before you make any further changes.
 
 Next, take a look at your solution to see if there is any code you'd like to clean up. If you'd like, add comments to explain anything that might be confusing. Update your variable names to make sure they are meaningful and clear. If there is any shared or reused logic between methods, see if you can extract it into a helper method. As you refactor, make sure to check your output to see that your solution still works.
 
