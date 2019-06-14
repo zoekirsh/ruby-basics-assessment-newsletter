@@ -36,11 +36,11 @@ def print_recipients
 end
 
 def print_subject
-    puts "Flatiron #{format_campus_location(CAMPUS)} Newsletter: #{format_week}"
+    puts "#{format_campus_location(CAMPUS)} Newsletter: #{format_week}"
 end
 
 def print_newsletter
-    puts "Flatiron #{format_campus_location(CAMPUS)} Newsletter: #{format_week}"
+    puts "#{format_campus_location(CAMPUS)} Newsletter: #{format_week}"
     puts "TODO: print articles"
     puts format_footer(CAMPUS)
 end
@@ -50,7 +50,7 @@ end
 #########################
 
 def format_campus_location(campus)
-    "#{campus["name"]} #{campus["location"]}"
+    "Flatiron #{campus["name"]}"
 end
 
 def format_week
