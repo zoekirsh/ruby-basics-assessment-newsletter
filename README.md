@@ -20,12 +20,11 @@ Make edits to `newsletter.rb`. As you do, you can run the code with `ruby newsle
 
 1. Fix syntax errors in `newsletter.rb` so that it runs without errors
 2. Fix the `format_campus_location` method so that it has the correct output
-3. Fix the `format_footer` method so that it has the correct output
-4. Fix logic error in `calculate_recipients`
-5. Write the body of `print_recipients` to print out the recipients
-6. Write the body of `format_article` to return a string with the formatted article
-7. Write the rest of the `print_newsletter` method to print all the articles
-8. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
+3. Fix logic error in `calculate_recipients`
+4. Write the body of `print_recipients` to print out the recipients
+5. Write the body of `format_article` to return a string with the formatted article
+6. Write the rest of the `print_newsletter` method to print all the articles
+7. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 ### 1. Fix syntax errors in `newsletter.rb` so that it runs without errors
 
@@ -35,30 +34,31 @@ As you solve the rest of the tasks, make sure that you can continue to run `ruby
 
 ### 2. Fix the `format_campus_location` method so that it has the correct output
 
-Given the `CAMPUS`, `sample_output.txt` shows that `format_campus_location` should return `"Flatiron Springfield"`. Figure out why it is not working correctly, and fix it.
+When you run `ruby newsletter.rb`, the subject line shows
 
-### 3. Fix the `format_footer` method so that it has the correct output
-
-If you check the footer in `sample_output.txt`, you'll see that the footer should be
-
-```txt
-Work hard, be nice, and have an epic week! //
-Flatiron School · Springfield · 171 Maple St, Springfield, MA 01105
+```
+Subject: Flatiron  Newsletter: Jun 13, 2019
 ```
 
-Fix the logic in `format_footer` so that it prints the correct output.
+If you check `sample_output.txt`, it shows that the right output should be
 
-### 4. Fix logic error in `calculate_recipients`
+```
+Subject: Flatiron Springfield Newsletter - Jun 13, 2019
+```
+
+`format_campus_location` should return `"Flatiron Springfield"`. Figure out why it is not working correctly, and fix it. You'll know it's working when the subject line in the output shows correctly.
+
+### 3. Fix logic error in `calculate_recipients`
 
 When people subscribe to the newsletter, they are added to `SUBSCRIBED`. When people unsubscribe from the newsletter, they are added to `UNSUBSCRIBED`. We need to avoid sending the newsletter to anyone who has unsubscribed. `calculate_recipients` should return an array with only the subscribers who have not unsubscribed.
 
 Right now, it's not working. Figure out why and update it so that it works correctly.
 
-### 5. Write the body of `print_recipients` to print out the recipients
+### 4. Write the body of `print_recipients` to print out the recipients
 
 Now that you have fixed `calculate_recipients`, you can use it to print out the list of recipients for the newsletter. Write a `print_recipients` method to do this. Check `sample_output.txt` for the formatting.
 
-### 6. Write the body of `format_article` to return a string with the formatted article
+### 5. Write the body of `format_article` to return a string with the formatted article
 
 Each article has an author, title, and text. Fill in the `format_article` method to return the article as a formatted string. It should look like
 
@@ -70,11 +70,11 @@ The orthogonal features, when combined, can explode into complexity.
 
 The title comes first. On the next line is the byline, `by: [author]`. On the following line is the text of the article.
 
-### 7. Write the rest of the `print_newsletter` method to print all the articles
+### 6. Write the rest of the `print_newsletter` method to print all the articles
 
 Print the list of articles stored in the `ARTICLES` constant. All of them should be formatted as in the `format_article` method.
 
-### 8. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
+### 7. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 If you'd like to see if there are any differences between the results, you can run `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
 
