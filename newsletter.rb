@@ -11,6 +11,7 @@ CAMPUS = {
     "name": "Springfield",
     "address": "171 Maple St, Springfield, MA 01105",
 }
+DATE = DateTime.parse('Jun 13, 2019')
 
 SUBSCRIBERS = ["rhona@grimes.info", "cedricschmidt@robel.io", "edmond@ko.org", "bryant@cummingsfisher.biz", "alverta@bernhard.name", "lucinda@beckerbogisich.biz", "wilhelminaullrich@hartmann.info", "shelby@kuhlmankilback.co", "katheruecker@lockman.net", "benedictblanda@collierkuhn.net", "ivory@collins.com", "argelia@vonruedenparisian.biz", "bo@rippin.net", "alfonzoklein@robel.io", "forest@herman.name", "denishahn@west.org", "alfredbrown@wuckert.net", "joan@jacobi.co", "trinidad@macgyver.co", "shaynepurdy@schaeferwisozk.co", "kianafritsch@lesch.biz", "raymundoruel@legros.net", "thomasenaboehm@keeling.net", "lynwood@lakin.biz", "julianpadberg@mosciski.com", "coleen@cormierparker.com", "luiswisoky@mcdermottpadberg.com", "gaylebogan@considine.net"]
 UNSUBSCRIBED = ["julianpadberg@mosciski.com", "bo@rippin.net", "idella@ankunding.info", "lynwood@lakin.biz", "royhoeger@wolff.org", "wilhelminaullrich@hartmann.info"]
@@ -54,8 +55,7 @@ def format_campus_location(campus)
 end
 
 def format_week
-    today = DateTime.now
-    today.strftime "%b %d, %Y"
+    DATE.strftime "%b %d, %Y"
     end
 end
 
