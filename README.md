@@ -21,10 +21,9 @@ Make edits to `newsletter.rb`. As you do, you can run the code with `ruby newsle
 1. Fix syntax errors in `newsletter.rb` so that it runs without errors
 2. Fix the `format_campus_location` method so that it has the correct output
 3. Fix logic error in `calculate_recipients`
-4. Write the body of `print_recipients` to print out the recipients
-5. Write the body of `format_article` to return a string with the formatted article
-6. Write the rest of the `print_newsletter` method to print all the articles
-7. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
+4. Write the body of `format_article` to return a string with the formatted article
+5. Write the rest of the `print_articles` method to print all the articles
+6. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 ### 1. Fix syntax errors in `newsletter.rb` so that it runs without errors
 
@@ -36,13 +35,13 @@ As you solve the rest of the tasks, make sure that you can continue to run `ruby
 
 When you run `ruby newsletter.rb`, the subject line shows
 
-```
+```txt
 Subject: Flatiron  Newsletter: Jun 13, 2019
 ```
 
 If you check `sample_output.txt`, it shows that the right output should be
 
-```
+```txt
 Subject: Flatiron Springfield Newsletter - Jun 13, 2019
 ```
 
@@ -52,13 +51,11 @@ Subject: Flatiron Springfield Newsletter - Jun 13, 2019
 
 When people subscribe to the newsletter, they are added to `SUBSCRIBED`. When people unsubscribe from the newsletter, they are added to `UNSUBSCRIBED`. We need to avoid sending the newsletter to anyone who has unsubscribed. `calculate_recipients` should return an array with only the subscribers who have not unsubscribed.
 
-Right now, it's not working. Figure out why and update it so that it works correctly.
+Right now, it's not working. When we run `ruby newsletter.rb`, we can see that `cedricschmidt@robel.io` is getting included in the recipients, despite appearing in the `UNSUBSCRIBED` array.
 
-### 4. Write the body of `print_recipients` to print out the recipients
+Figure out why the method is not working and update it so that it works correctly. You can check if your version is working by looking at the output -`cedricschmidt@robel.io` should be gone from the beginning, and the last recipient should be `luiswisoky@mcdermottpadberg.com`.
 
-Now that you have fixed `calculate_recipients`, you can use it to print out the list of recipients for the newsletter. Write a `print_recipients` method to do this. Check `sample_output.txt` for the formatting.
-
-### 5. Write the body of `format_article` to return a string with the formatted article
+### 4. Write the body of `format_article` to return a string with the formatted article
 
 Each article has an author, title, and text. Fill in the `format_article` method to return the article as a formatted string. It should look like
 
@@ -70,11 +67,15 @@ The orthogonal features, when combined, can explode into complexity.
 
 The title comes first. On the next line is the byline, `by: [author]`. On the following line is the text of the article.
 
-### 6. Write the rest of the `print_newsletter` method to print all the articles
+When your method is working right, you should see the `Mining` article above in the output of `ruby newsletter.rb` instead of `TODO - format article with title, byline, and text`.
 
-Print the list of articles stored in the `ARTICLES` constant. All of them should be formatted as in the `format_article` method.
+### 5. Write the rest of the `print_articles` method to print all the articles
 
-### 7. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
+Right now, `print_articles` only prints one article - the first article in the `ARTICLES` array. It should print out all of the articles.
+
+Fix the `print_articles` method so that it prints all of the articles formatted with `format_article`.
+
+### 6. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 If you'd like to see if there are any differences between the results, you can run `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
 
