@@ -6,7 +6,10 @@
 
 require 'date'
 
+#########################
 # Data for the newsletter
+#########################
+
 CAMPUS = {
   "name": 'Springfield',
   "address": '171 Maple St, Springfield, MA 01105'
@@ -25,6 +28,11 @@ ARTICLES = [
   { "author": 'Michale Bruen Boehm', "title": 'Consulting', "text": "Everyone has an individual background. Someone may come from Python, someone else may come from Perl, and they may be surprised by different aspects of the language. Then they come up to me and say, 'I was surprised by this feature of the language, so therefore Ruby violates the principle of least surprise.' Wait. Wait. The principle of least surprise is not for you only." },
   { "author: 'Tony Keeling Cartwright', "title": 'Design', "text": 'Often people, especially computer engineers, focus on the machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines.' }
 ]
+
+
+#########################
+# helpers to print parts of the newsletter
+#########################
 
 def calculate_recipients
   SUBSCRIBERS.each do |email|
@@ -70,6 +78,10 @@ end
 def format_footer(campus)
   "Work hard, be nice, and have an epic week! //\n Flatiron School · #{campus[:name]} · #{campus[:address]} "
 end
+
+#########################
+# entry point - generates the actual newsletter
+#########################
 
 def run
   puts "Generating this week's newsletter..."
