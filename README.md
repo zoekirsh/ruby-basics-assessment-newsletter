@@ -20,7 +20,7 @@ Make edits to `newsletter.rb`. As you do, you can run the code with `ruby newsle
 
 These should be completed in order - each step builds on the previous steps. See below for a more detailed explanation of each step.
 
-1. Fix syntax errors in `newsletter.rb` so that it runs without errors
+1. Fix errors in `newsletter.rb` so that it runs without errors
 2. Fix the `format_campus_location` method so that it has the correct output
 3. Fix logic error in `calculate_recipients`
 4. Write the body of `print_article` to print a string with the formatted article
@@ -30,9 +30,9 @@ These should be completed in order - each step builds on the previous steps. See
 
 Feel free to use any debugging tools you've learned in order to solve the challenge. Remember, you may need to add additional code to `newsletter.rb` in order to use tools like `binding.pry`.
 
-### 1. Fix syntax errors in `newsletter.rb` so that it runs without errors
+### 1. Fix errors in `newsletter.rb` so that it runs without errors
 
-If you run `ruby newsletter.rb`, you'll notice that there are some syntax errors. Before you try the next tasks, get the code to run without errors.
+If you run `ruby newsletter.rb`, you'll notice that the code exits with an error. Before you try the next tasks, get the code to run without errors.
 
 As you solve the rest of the tasks, make sure that you can continue to run `ruby newsletter.rb` without errors.
 
