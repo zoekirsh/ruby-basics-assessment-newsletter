@@ -3,14 +3,12 @@
 # Use:
 # $ ruby newsletter.rb
 
-require "date"
-
 #########################
-# helpers to print parts of the newsletter
+# helpers to calculate some info for the newsletter
 #########################
 
 def calculate_recipients
-  SUBSCRIBERS.reject do |email|
+  SUBSCRIBERS.each do |email|
     UNSUBSCRIBED.include?(email)
   end
 end
@@ -18,6 +16,10 @@ end
 def first_n_articles(number_of_articles)
   ARTICLES.first(number_of_articles)
 end
+
+#########################
+# helpers to print parts of the newsletter
+#########################
 
 def print_recipients
   puts calculate_recipients.join(", ")
@@ -28,9 +30,7 @@ def print_subject
 end
 
 def print_articles(articles)
-  articles.each do |article|
-    puts format_article(article)
-  end
+  puts format_article(articles.first)
 end
 
 def print_newsletter(number_of_articles)
@@ -42,7 +42,8 @@ def print_newsletter(number_of_articles)
   print_recipients
   puts "Body:"
   puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
-  print_articles(first_n_articles(number_of_articles))
+  articles = first_n_articles(number_of_articles)
+  print_articles(articles)
   puts format_footer(CAMPUS)
 end
 
@@ -51,17 +52,18 @@ end
 #########################
 
 def format_campus_location(campus)
-  "Flatiron #{campus[:name]}"
+  "Flatiron #{campus['name']}"
 end
 
 def format_week
-  DATE.strftime "%b %d, %Y"
+  DATE
 end
 
 def format_article(article)
-  "#{article[:title]}\n" \
-    "by: #{article[:author]}\n" \
-    "#{article[:text]}\n\n"
+  # TODO - format article with title, byline, and text
+  "TITLE\n
+  by: AUTHOR\n
+  TEXT"
 end
 
 def format_footer(campus)
@@ -77,12 +79,9 @@ def generate_newsletter(input)
     # if there's no input number specified, print just the first 3 articles
     print_newsletter(3)
   else
-    number_of_articles = input.to_i
-    if number_of_articles < 1
-      puts "number of articles should be a number more than 0"
-    else
-      print_newsletter(number_of_articles)
-    end
+    # if a number of articles is specified, print that many articles
+    number_of_articles = input
+    print_newsletter(number_of_articles)
   end
 end
 
@@ -103,7 +102,7 @@ CAMPUS = {
   "name": "Springfield",
   "address": "171 Maple St, Springfield, MA 01105",
 }
-DATE = DateTime.parse("Jun 13, 2019")
+DATE = "Jun 13, 2019"
 
 SUBSCRIBERS = ["rhona@grimes.info", "cedricschmidt@robel.io", "edmond@ko.org", "bryant@cummingsfisher.biz", "alverta@bernhard.name", "lucinda@beckerbogisich.biz", "wilhelminaullrich@hartmann.info", "shelby@kuhlmankilback.co", "katheruecker@lockman.net", "benedictblanda@collierkuhn.net", "ivory@collins.com", "argelia@vonruedenparisian.biz", "bo@rippin.net", "alfonzoklein@robel.io", "forest@herman.name", "denishahn@west.org", "alfredbrown@wuckert.net", "joan@jacobi.co", "trinidad@macgyver.co", "shaynepurdy@schaeferwisozk.co", "kianafritsch@lesch.biz", "raymundoruel@legros.net", "thomasenaboehm@keeling.net", "lynwood@lakin.biz", "julianpadberg@mosciski.com", "coleen@cormierparker.com", "luiswisoky@mcdermottpadberg.com", "gaylebogan@considine.net"]
 UNSUBSCRIBED = ["cedricschmidt@robel.io", "alverta@bernhard.name", "julianpadberg@mosciski.com", "bo@rippin.net", "gaylebogan@considine.net"]
@@ -122,6 +121,5 @@ ARTICLES = [
 # When we run the file with
 # $ ruby newsletter.rb
 # call the 'run' method
-# Pass in the number of articles specified in the command arguments
 
 run

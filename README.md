@@ -18,6 +18,13 @@ Make edits to `newsletter.rb`. As you do, you can run the code with `ruby newsle
 
 ## Instructions
 
+
+### Overview
+
+These should be completed in order - each step builds on the previous steps.
+
+See below for a more detailed explanation of each step.
+
 1. Fix syntax errors in `newsletter.rb` so that it runs without errors
 2. Fix the `format_campus_location` method so that it has the correct output
 3. Fix logic error in `calculate_recipients`
@@ -67,17 +74,27 @@ The orthogonal features, when combined, can explode into complexity.
 
 The title comes first. On the next line is the byline, `by: [author]`. On the following line is the text of the article.
 
-When your method is working right, you should see the `Mining` article above in the output of `ruby newsletter.rb` instead of `TODO - format article with title, byline, and text`.
+When your method is working right, you should see the `Mining` article above in the output of `ruby newsletter.rb` instead of `Step 4 - format article with title, byline, and text`.
 
 ### 5. Write the rest of the `print_articles` method to print all the articles
 
-Right now, `print_articles` only prints one article - the first article in the `ARTICLES` array. It should print out all of the articles.
+Right now, `print_articles` only prints one article - the first article in the `articles` argument that's passed in. It should print out all of the articles that are passed in.
 
-Fix the `print_articles` method so that it prints all of the articles formatted with `format_article`.
+Fix the `print_articles` method so that it prints all the articles passed in, formatted with `format_article`.
 
-### 6. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
+At this point, your output should match the output in `sample_output.txt`
 
 If you'd like to see if there are any differences between the results, you can run `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
+
+### 6. Update `generate_newsletter` to work with more inputs
+
+Running `ruby newsletter.rb` should generate a newsletter with 3 articles. If you pass a number to the program, like `ruby newsletter.rb 10`, it should generate a newsletter with that many articles (or all of the articles, if the number is larger than the articles in the data). 
+
+If the input is not a number, the program should print `number of articles should be a number more than 0`. 
+
+Update the `generate_newsletter` method so that 
+
+### 7. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 **After you check that you are getting the right output, commit your solution.** That way you have a snapshot of your working version before you make any further changes.
 
