@@ -70,8 +70,8 @@ end
 
 def generate_newsletter(input)
   if input.nil?
-    # if there's no input number specified, print all the articles
-    print_newsletter(ARTICLES.length)
+    # if there's no input number specified, print just the first 3 articles
+    print_newsletter(3)
   else
     number_of_articles = input.to_i
     if number_of_articles < 1
