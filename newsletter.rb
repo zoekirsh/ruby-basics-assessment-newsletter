@@ -47,15 +47,15 @@ def print_subject
   puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
 end
 
-def print_articles
-  ARTICLES.each do |article|
+def print_articles(number_of_articles)
+  ARTICLES.first(number_of_articles).each do |article|
     puts format_article(article)
   end
 end
 
-def print_newsletter
+def print_newsletter(number_of_articles)
   puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
-  print_articles
+  print_articles(number_of_articles)
   puts format_footer(CAMPUS)
 end
 
@@ -86,7 +86,7 @@ end
 # entry point - generates the actual newsletter
 #########################
 
-def run
+def run(number_of_articles=20)
   puts "Generating this week's newsletter..."
   puts ''
   print 'Subject: '
@@ -94,10 +94,26 @@ def run
   print 'Recipients: '
   print_recipients
   puts 'Body:'
-  print_newsletter
+  print_newsletter(number_of_articles)
 end
 
 # When we run the file with
 # $ ruby newsletter.rb
 # call the 'run' method
-run
+# Pass in the number of articles specified in the command arguments
+if ARGV.length > 0
+  if ARGV.length == 1
+    number_of_articles = ARGV[0].to_i
+    if number_of_articles < 1
+      puts "number of articles should be a number more than 0"
+    else
+      run(number_of_articles)
+    end
+  else
+    puts "Pass in a single argument with the number of articles to include"
+  end
+else
+  run
+end
+
+
