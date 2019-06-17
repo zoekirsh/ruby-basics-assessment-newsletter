@@ -4,8 +4,6 @@
 # $ ruby newsletter.rb
 #
 
-require 'date'
-
 #########################
 # Data for the newsletter
 #########################
@@ -14,7 +12,7 @@ CAMPUS = {
   "name": 'Springfield',
   "address": '171 Maple St, Springfield, MA 01105'
 }
-DATE = DateTime.parse('Jun 13, 2019')
+DATE = 'Jun 13, 2019'
 
 SUBSCRIBERS = ['rhona@grimes.info', 'cedricschmidt@robel.io', 'edmond@ko.org', 'bryant@cummingsfisher.biz', 'alverta@bernhard.name', 'lucinda@beckerbogisich.biz', 'wilhelminaullrich@hartmann.info', 'shelby@kuhlmankilback.co', 'katheruecker@lockman.net', 'benedictblanda@collierkuhn.net', 'ivory@collins.com', 'argelia@vonruedenparisian.biz', 'bo@rippin.net', 'alfonzoklein@robel.io', 'forest@herman.name', 'denishahn@west.org', 'alfredbrown@wuckert.net', 'joan@jacobi.co', 'trinidad@macgyver.co', 'shaynepurdy@schaeferwisozk.co', 'kianafritsch@lesch.biz', 'raymundoruel@legros.net', 'thomasenaboehm@keeling.net', 'lynwood@lakin.biz', 'julianpadberg@mosciski.com', 'coleen@cormierparker.com', 'luiswisoky@mcdermottpadberg.com', 'gaylebogan@considine.net']
 UNSUBSCRIBED = ['cedricschmidt@robel.io', 'alverta@bernhard.name', 'julianpadberg@mosciski.com', 'bo@rippin.net', 'gaylebogan@considine.net']
@@ -48,8 +46,16 @@ def print_subject
   puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
 end
 
+def print_article(article)
+ # TODO - format article with title, byline, and text
+  puts "TITLE"
+  puts "by: AUTHOR"
+  puts "TEXT"
+  puts ""
+end
+
 def print_articles
-  puts format_article(ARTICLES.first)
+  print_article(ARTICLES.first)
 end
 
 def print_newsletter
@@ -68,11 +74,7 @@ def format_campus_location(campus)
 end
 
 def format_week
-  DATE.strftime '%b %d, %Y'
-end
-
-def format_article(article)
-  'TODO - format article with title, byline, and text'
+  DATE
 end
 
 def format_footer(campus)
