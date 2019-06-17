@@ -15,6 +15,10 @@ def calculate_recipients
   end
 end
 
+def first_n_articles(number_of_articles)
+  ARTICLES.first(number_of_articles)
+end
+
 def print_recipients
   puts calculate_recipients.join(", ")
 end
@@ -23,8 +27,8 @@ def print_subject
   puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
 end
 
-def print_articles(number_of_articles)
-  ARTICLES.first(number_of_articles).each do |article|
+def print_articles(articles)
+  articles.each do |article|
     puts format_article(article)
   end
 end
@@ -38,7 +42,7 @@ def print_newsletter(number_of_articles)
   print_recipients
   puts "Body:"
   puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
-  print_articles(number_of_articles)
+  print_articles(first_n_articles(number_of_articles))
   puts format_footer(CAMPUS)
 end
 
