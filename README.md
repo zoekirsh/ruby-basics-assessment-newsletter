@@ -123,7 +123,7 @@ Once you have cleaned up your solution to your satisfaction, commit again and su
 ### Ruby Syntax Basics
 
 1. Invalid syntax, code does not execute.
-2. Valid syntax, but does not correctly use conditional statements, looping constructs, and methods, from other files
+2. Valid syntax, but does not correctly use conditional statements, looping constructs, and methods
 3. Valid syntax. Use of conditional statements, looping constructs, and methods is incomplete or with some errors.
 4. Valid syntax. Correct use of conditional statements, looping constructs, and methods. Code generates the right output when executed. Code may have some unclear variable names, comments, formatting, or non-idiomatic Ruby.
 5. Valid syntax. Correct use of conditional statements, looping constructs, and methods. Code generates the right output when executed. Code uses clear variable names, comments, formatting, and idiomatic Ruby.
