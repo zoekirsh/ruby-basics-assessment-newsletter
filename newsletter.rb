@@ -64,7 +64,7 @@ def print_articles(articles)
   print_article(articles.first)
 end
 
-def print_newsletter
+def print_newsletter(number)
   puts "Generating this week's newsletter..."
   puts ""
   print "Subject: "
