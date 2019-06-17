@@ -25,7 +25,8 @@ These should be completed in order - each step builds on the previous steps. See
 3. Fix logic error in `calculate_recipients`
 4. Write the body of `print_article` to print a string with the formatted article
 5. Write the rest of the `print_articles` method to print all the articles
-6. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
+6. Update `generate_newsletter` to work with numeric inputs
+7. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 Feel free to use any debugging tools you've learned in order to solve the challenge. Remember, you may need to add additional code to `newsletter.rb` in order to use tools like `binding.pry`.
 
@@ -89,17 +90,27 @@ At this point, your output should match the output in `sample_output.txt`
 
 If you'd like to see if there are any differences between the results, you can run `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
 
-### 6. Update `generate_newsletter` to work with more inputs
+### 6. Update `generate_newsletter` to work with numeric inputs
 
-Running `ruby newsletter.rb` should generate a newsletter with 3 articles. If you pass a number to the program, like `ruby newsletter.rb 10`, it should generate a newsletter with that many articles (or all of the articles, if the number is larger than the articles in the data).
+Running `ruby newsletter.rb` should generate a newsletter with 3 articles. If you pass a number to the program, like `ruby newsletter.rb 10`, it should generate a newsletter with that many articles. For example, `ruby newsletter.rb 5` should generate a newsletter with 5 articles. If the number is larger than the number of the articles, the program should print all of the articles.
 
-Update the `generate_newsletter` method so that it prints some number of articles when the input is a number.
+Update the `generate_newsletter` method so that it prints the right number of articles when the input is a number.
 
-If the input is not a number, the program should print `number of articles should be a number more than 0`.
+If the input is not a number, the program should print `Input should be a number more than 0`.
 
 ### 7. Run the code and verify that it matches the sample output
 
-If you'd like to see if there are any differences between the results, you can run `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
+Now that your code is supporting different inputs, you'll need to check it against those inputs.
+
+Running `ruby newsletter.rb` should have the same output as `sample_output.txt`. You can check to see if there are any differences between the results by running `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
+
+Running `ruby newsletter.rb test` should output
+
+```
+Input should be a number more than 0
+```
+
+Running `ruby newsletter.rb 10` should have the same result that is captured in `10_sample_output.txt`. If you'd like to check this result, you can use `diff 10_sample_output.txt <(ruby newsletter.rb 10)`. Just as before, this will show any lines of difference between your program and the sample output. If there are no differences, no lines will be printed.
 
 **After you check that you are getting the right output, commit your solution.** That way you have a snapshot of your working version before you make any further changes.
 
