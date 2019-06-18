@@ -96,7 +96,7 @@ Running `ruby newsletter.rb` should generate a newsletter with 3 articles. If yo
 
 Update the `generate_newsletter` method so that it prints the right number of articles when the input is a number.
 
-If the input is not a number, the program should print `Input should be a number more than 0`.
+If the input is not a number, or if it's a number 0 or less, the program should print `Input should be a number more than 0`. Remember, you can convert a string to a number with `to_i`.
 
 ### 7. Run the code and verify that it matches the sample output
 
@@ -134,7 +134,7 @@ Once you have cleaned up your solution to your satisfaction, commit again and su
 2. Fixed syntax errors but not logic errors
 3. Fixed syntax errors and some logic errors
 4. Fixed syntax and logic errors
-5. Fixed syntax and logic errors confidently, output exactly matches expected output
+5. Fixed syntax and logic errors, output exactly matches expected output
 
 ### Ruby Arrays, Hashes, and Enumerable methods
 
