@@ -41,7 +41,7 @@ As you solve the rest of the tasks, make sure that you can continue to run `ruby
 When you run `ruby newsletter.rb`, the subject line shows
 
 ```txt
-Subject: Flatiron  Newsletter: Jun 13, 2019
+Subject: Flatiron  Newsletter - Jun 13, 2019
 ```
 
 If you check `sample_output.txt`, it shows that the right output should be
