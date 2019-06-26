@@ -54,11 +54,13 @@ Subject: Flatiron Springfield Newsletter - Jun 13, 2019
 
 ### 3. Fix logic error in `calculate_recipients`
 
-When people subscribe to the newsletter, they are added to `SUBSCRIBED`. When people unsubscribe from the newsletter, they are added to `UNSUBSCRIBED`. We need to avoid sending the newsletter to anyone who has unsubscribed. `calculate_recipients` should return an array. None of the emails in the `UNSUBSCRIBED` array should appear in the results.
+When people subscribe to the newsletter, they are added to `SUBSCRIBED`. When people unsubscribe from the newsletter, they are added to `UNSUBSCRIBED`. We need to avoid sending the newsletter to anyone who has unsubscribed. `calculate_recipients` should return an array. None of the emails in the `UNSUBSCRIBED` array should appear in the results array returned.
 
 Right now, it's not working. When we run `ruby newsletter.rb`, we can see that `cedricschmidt@robel.io` is getting included in the recipients, despite appearing in the `UNSUBSCRIBED` array.
 
 Figure out why the method is not working and update it so that it works correctly. You can check if your version is working by looking at the output -`cedricschmidt@robel.io` should be gone from the beginning, and the last recipient should be `luiswisoky@mcdermottpadberg.com`.
+
+Your `calculate_recipients` method should return a new array - it should not change the `SUBSCRIBERS` array.
 
 ### 4. Write the body of `print_article` to print a string with the formatted article
 
@@ -98,6 +100,8 @@ Update the `generate_newsletter` method so that it prints the right number of ar
 
 If the input is not a number, or if it's a number 0 or less, the program should print `Input should be a number more than 0`. Remember, you can convert a string to a number with `to_i`.
 
+The program should either print this warning, or print a newsletter - not both.
+
 ### 7. Run the code and verify that it matches the sample output
 
 Now that your code is supporting different inputs, you'll need to check it against those inputs.
@@ -109,6 +113,8 @@ Running `ruby newsletter.rb test` should output
 ```
 Input should be a number more than 0
 ```
+
+You should also see the warning output if you run `ruby newsletter.rb -5` or  `ruby newsletter.rb 0`.
 
 Running `ruby newsletter.rb 10` should have the same result that is captured in `10_sample_output.txt`. If you'd like to check this result, you can use `diff 10_sample_output.txt <(ruby newsletter.rb 10)`. Just as before, this will show any lines of difference between your program and the sample output. If there are no differences, no lines will be printed.
 
