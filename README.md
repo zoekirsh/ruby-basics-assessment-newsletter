@@ -8,7 +8,7 @@ This assessment is designed to test your understanding of the basics of Ruby. It
 
 Read these instructions carefully. They describe the code you'll be working with and what you need to do.
 
-At the bottom of this file is the rubric used to evaluate your submission. You do not need to get everything right. Focus on getting each piece of code to work rather than writing partial solutions to each.
+At the bottom of this file is the rubric used to evaluate your submission. You do not need to get everything right. Focus on getting each piece of code to work instead of writing partial solutions for each task.
 
 ## Introduction
 
@@ -23,12 +23,14 @@ These should be completed in order - each step builds on the previous steps. See
 1. Fix errors in `newsletter.rb` so that it runs without errors
 2. Fix the `format_campus_location` method so that it has the correct output
 3. Fix logic error in `calculate_recipients`
-4. Write the body of `print_article` to print a string with the formatted article
-5. Write the rest of the `print_articles` method to print all the articles
+4. Write the body of `print_one_article` to print a string with the formatted article
+5. Write the `print_many_articles` method to print all the articles
 6. Update `generate_newsletter` to work with numeric inputs
 7. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 Feel free to use any debugging tools you've learned in order to solve the challenge. Remember, you may need to add additional code to `newsletter.rb` in order to use tools like `binding.pry`.
+
+If you get stuck, you are allowed to skip tasks. You can submit without completing all the instructions. You don't need to complete all of the tasks in order to get meaningful feedback on your code.
 
 ### 1. Fix errors in `newsletter.rb` so that it runs without errors
 
@@ -62,9 +64,9 @@ Figure out why the method is not working and update it so that it works correctl
 
 Your `calculate_recipients` method should return a new array - it should not change the `SUBSCRIBERS` array.
 
-### 4. Write the body of `print_article` to print a string with the formatted article
+### 4. Write the body of `print_one_article` to print a string with the formatted article
 
-Each article has an author, title, and text. Fill in the `print_article` method to print the article as a formatted string. It should look like
+Each article has an author, title, and text. Fill in the `print_one_article` method to print the article as a formatted string. It should look like
 
 ```txt
 Mining
@@ -82,11 +84,11 @@ by: AUTHOR
 TEXT
 ```
 
-### 5. Write the rest of the `print_articles` method to print all the articles
+### 5. Write the `print_many_articles` method to print all the articles
 
-Right now, `print_articles` only prints one article - the first article in the `articles` argument. It should print out all of the articles, not just the first one.
+The `print_many_articles` should print all the articles passed into the method. As written, it only prints one article - the first article in the `articles` argument. It should print out all of the articles, not just the first one.
 
-Fix the `print_articles` method so that it prints all the articles passed in, formatted with `print_article`.
+Fix the `print_articles` method so that it prints all the articles passed in. It should use the `print_one_article` to print each article.
 
 At this point, your output should match the output in `sample_output.txt`
 
@@ -129,23 +131,23 @@ Once you have cleaned up your solution to your satisfaction, commit again and su
 ### Ruby Syntax Basics
 
 1. Invalid syntax, code does not execute.
-2. Valid syntax, but does not correctly use conditional statements, looping constructs, and methods
+2. Valid syntax, but does not correctly use conditional statements, looping constructs, and methods.
 3. Valid syntax. Use of conditional statements, looping constructs, and methods is incomplete or with some errors.
-4. Valid syntax. Correct use of conditional statements, looping constructs, and methods. Code generates the right output when executed. Code may have some unclear variable names, comments, formatting, or non-idiomatic Ruby.
-5. Valid syntax. Correct use of conditional statements, looping constructs, and methods. Code generates the right output when executed. Code uses clear variable names, comments, formatting, and idiomatic Ruby.
+4. Valid syntax. Correct use of conditional statements, looping constructs, and methods. Code may have unclear variable names, extraneous comments (like commented-out code), or inconsistent formatting and indentation.
+5. Valid syntax. Correct use of conditional statements, looping constructs, and methods. Code uses clear variable and method names, meaningful comments, and consistent formatting and indentation.
 
-### Problem Solving and Debugging in Ruby
+### Problem Solving and Debugging
 
-1. Did not fix syntax or logic errors
-2. Fixed syntax errors but not logic errors
-3. Fixed syntax errors and some logic errors
-4. Fixed syntax and logic errors
-5. Fixed syntax and logic errors, output exactly matches expected output
+1. Did not fix syntax or logic errors.
+2. Fixed syntax errors but not logic errors.
+3. Fixed syntax errors and some logic errors.
+4. Fixed syntax and logic errors. Output has minor differences from expected output.
+5. Fixed syntax and logic errors. Output exactly matches expected output.
 
 ### Ruby Arrays, Hashes, and Enumerable methods
 
-1. Incorrect syntax for array and hash manipulation and enumerable methods
-2. Some correct syntax for array and hash manipulation and enumerable methods, but incorrect logic
-3. Correct syntax and logic for array and hash manipulation, but not enumerable methods
-4. Correct syntax and logic for array and hash manipulation and enumerable methods
-5. Correct syntax and logic for array and hash manipulation and enumerable methods and appropriate selection of enumerable methods for given tasks
+1. Incorrect syntax for arrays, hashes, and enumerable methods.
+2. Some correct syntax for arrays, hashes, and enumerable methods, but incorrect logic.
+3. Correct syntax and logic for either arrays and hashes or enumerable methods.
+4. Correct syntax and logic for array and hash manipulation and enumerable methods. Selection of enumerable methods may not be suitable or natural for the task. For example, uses `each` where `filter` would be appropriate.
+5. Correct syntax and logic for array and hash manipulation and enumerable methods and appropriate selection of enumerable methods for given task.
