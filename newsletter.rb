@@ -61,6 +61,7 @@ def print_one_article(article)
 end
 
 def print_many_articles(articles)
+  # TODO - should print all the articles, not just the first one
   print_one_article(articles.first)
 end
 
