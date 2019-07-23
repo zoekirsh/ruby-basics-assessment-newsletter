@@ -52,7 +52,7 @@ def print_subject
   puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
 end
 
-def print_article(article)
+def print_one_article(article)
   # TODO - format article with title, byline, and text
   puts "TITLE"
   puts "by: AUTHOR"
@@ -60,8 +60,9 @@ def print_article(article)
   puts ""
 end
 
-def print_articles(articles)
-  print_article(articles.first)
+def print_many_articles(articles)
+  # TODO - should print all the articles, not just the first one
+  print_one_article(articles.first)
 end
 
 def print_newsletter(number)
