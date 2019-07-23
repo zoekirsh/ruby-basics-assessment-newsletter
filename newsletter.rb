@@ -31,6 +31,7 @@ ARTICLES = [
 #########################
 
 def calculate_recipients
+  # TODO (Step 3) - Fix, not working
   SUBSCRIBERS.each do |email|
     UNSUBSCRIBED.include?(email)
   end
@@ -53,7 +54,7 @@ def print_subject
 end
 
 def print_one_article(article)
-  # TODO - format article with title, byline, and text
+  # TODO (Step 4) - format article with title, byline, and text
   puts "TITLE"
   puts "by: AUTHOR"
   puts "TEXT"
@@ -61,7 +62,7 @@ def print_one_article(article)
 end
 
 def print_many_articles(articles)
-  # TODO - should print all the articles, not just the first one
+  # TODO (Step 5) - should print all the articles, not just the first one
   print_one_article(articles.first)
 end
 
@@ -85,6 +86,7 @@ end
 #########################
 
 def format_campus_location(campus)
+  # TODO (Step 2) - Fix, not showing name.
   "Flatiron #{campus["name"]}"
 end
 
@@ -101,18 +103,20 @@ end
 #########################
 
 def generate_newsletter(input)
-  if input.nil?
+  if input == nil
     # if there's no input number specified, print just the first 3 articles
     print_newsletter(3)
   else
     # if a number of articles is specified, print that many articles
+    # TODO (Step 6) - Fix, not working 
     number_of_articles = input
     print_newsletter(number_of_articles)
   end
 end
 
+# uses the input from the command line to generate the newsletter
 def run
-  # use the input from the command line to generate the newsletter
+  # ARGV is an array of strings with the arguments from the command line
   if ARGV.length < 2
     generate_newsletter(ARGV[0])
   else
@@ -120,7 +124,7 @@ def run
   end
 end
 
-# When we run the file with
+# When we run the file from the command line, like
 # $ ruby newsletter.rb
 # call the 'run' method
 run

@@ -96,19 +96,31 @@ If you'd like to see if there are any differences between the results, you can r
 
 ### 6. Update `generate_newsletter` to work with numeric inputs
 
-Running `ruby newsletter.rb` should generate a newsletter with 3 articles. If you pass a number to the program, like `ruby newsletter.rb 10`, it should generate a newsletter with that many articles. For example, `ruby newsletter.rb 5` should generate a newsletter with 5 articles. If the number is larger than the number of the articles, the program should print all of the articles.
+So far, we've run `ruby newsletter.rb` without any inputs, and it has generated a newsletter with 3 articles. If you pass a number to the program on the command line, it should generate a newsletter with that many articles.
+
+For example,
+
+```
+ruby newsletter.rb 5
+```
+
+should generate a newsletter with 5 articles.
 
 Update the `generate_newsletter` method so that it prints the right number of articles when the input is a number.
 
-If the input is not a number, or if it's a number 0 or less, the program should print `Input should be a number more than 0`. Remember, you can convert a string to a number with `to_i`.
+If the number is larger than the number of the articles, the program should print all of the articles.
+
+If the input is not a number, or if it's less than 1, the program should print `Input should be a number more than 0`. Remember, you can convert a string to a number with `to_i`.
 
 The program should either print this warning, or print a newsletter - not both.
+
+The `run` method already gets the input from the command line and passes it into `generate_newsletter`. You should only need to update the `generate_newsletter` method.
 
 ### 7. Run the code and verify that it matches the sample output
 
 Now that your code is supporting different inputs, you'll need to check it against those inputs.
 
-Running `ruby newsletter.rb` should have the same output as `sample_output.txt`. You can check to see if there are any differences between the results by running `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
+Running `ruby newsletter.rb` should have the same output as `sample_output.txt`. You can check to see if there are any differences between the results by running `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines that are different between your output and `sample_output.txt`. If there are no differences, no lines will be printed.
 
 Running `ruby newsletter.rb test` should output
 
@@ -118,11 +130,13 @@ Input should be a number more than 0
 
 You should also see the warning output if you run `ruby newsletter.rb -5` or  `ruby newsletter.rb 0`.
 
-Running `ruby newsletter.rb 10` should have the same result that is captured in `10_sample_output.txt`. If you'd like to check this result, you can use `diff 10_sample_output.txt <(ruby newsletter.rb 10)`. Just as before, this will show any lines of difference between your program and the sample output. If there are no differences, no lines will be printed.
+Running `ruby newsletter.rb 10` should have the same result that is captured in `10_sample_output.txt`. If you'd like to check this result, you can use `diff 10_sample_output.txt <(ruby newsletter.rb 10)`. Just as before, this will show any lines that are different between your program and the sample output. If there are no differences, no lines will be printed.
 
 **After you check that you are getting the right output, commit your solution.** That way you have a snapshot of your working version before you make any further changes.
 
-Next, take a look at your solution to see if there is any code you'd like to clean up. If you'd like, add comments to explain anything that might be confusing. Update your variable names to make sure they are meaningful and clear. If there is any shared or reused logic between methods, see if you can extract it into a helper method. As you refactor, make sure to check your output to see that your solution still works.
+### Clean up and Submit
+
+Take a look at your solution to see if there is any code you'd like to clean up. Add comments to explain anything that might be confusing. Remove commented-out code that is no longer used. Check that any variable names you've used are meaningful and clear. If there is any shared or reused logic between methods, see if you can extract it into a helper method. As you refactor, make sure to check your output to see that your solution still works.
 
 Once you have cleaned up your solution to your satisfaction, commit again and submit your code.
 
