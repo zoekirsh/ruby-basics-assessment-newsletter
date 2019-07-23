@@ -76,7 +76,7 @@ def print_newsletter(number)
   puts "Body:"
   puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
   articles = first_n_articles(number_of_articles)
-  print_articles(articles)
+  print_many_articles(articles)
   puts format_footer(CAMPUS)
   end
 end
