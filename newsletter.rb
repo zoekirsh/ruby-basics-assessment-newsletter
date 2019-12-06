@@ -1,20 +1,15 @@
-# newsletter.rb
-# Generates this week's newsletter
-# Use:
-# $ ruby newsletter.rb
-
 #########################
 # Data for the newsletter
 #########################
 
 CAMPUS = {
-  "name": "Springfield",
-  "address": "171 Maple St, Springfield, MA 01105",
+  "name": "DC",
+  "address": "1440 G St NW, Washington, DC 20005",
 }
-DATE = "Jun 13, 2019"
+DATE = "Nov 20, 2019"
 
-SUBSCRIBERS = ["rhona@grimes.info", "cedricschmidt@robel.io", "edmond@ko.org", "bryant@cummingsfisher.biz", "alverta@bernhard.name", "lucinda@beckerbogisich.biz", "wilhelminaullrich@hartmann.info", "shelby@kuhlmankilback.co", "katheruecker@lockman.net", "benedictblanda@collierkuhn.net", "ivory@collins.com", "argelia@vonruedenparisian.biz", "bo@rippin.net", "alfonzoklein@robel.io", "forest@herman.name", "denishahn@west.org", "alfredbrown@wuckert.net", "joan@jacobi.co", "trinidad@macgyver.co", "shaynepurdy@schaeferwisozk.co", "kianafritsch@lesch.biz", "raymundoruel@legros.net", "thomasenaboehm@keeling.net", "lynwood@lakin.biz", "julianpadberg@mosciski.com", "coleen@cormierparker.com", "luiswisoky@mcdermottpadberg.com", "gaylebogan@considine.net"]
-UNSUBSCRIBED = ["cedricschmidt@robel.io", "alverta@bernhard.name", "julianpadberg@mosciski.com", "bo@rippin.net", "gaylebogan@considine.net"]
+SUBSCRIBERS = ["rhona@grimes.info", "cedricschmidt@robel.io", "edmond@ko.org", "bryant@cummingsfisher.biz", "alverta@bernhard.name"]
+UNSUBSCRIBED = ["cedricschmidt@robel.io", "alverta@bernhard.name"]
 
 ARTICLES = [
   {"author": "Destiny Blanda Bruen II", "title": "Mining", "text": "The orthogonal features, when combined, can explode into complexity."},
@@ -27,104 +22,71 @@ ARTICLES = [
 ]
 
 #########################
-# helpers to calculate some info for the newsletter
+# Methods to generate the newsletter
 #########################
 
 def calculate_recipients
-  # TODO (Step 3) - Fix, not working
-  SUBSCRIBERS.each do |email|
-    UNSUBSCRIBED.include?(email)
-  end
+  # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
+  # write a method that will return an array of only the subscribers who haven't unsubscribed
 end
 
 def first_n_articles(number_of_articles
   ARTICLES.first(number_of_articles)
 end
 
-#########################
-# helpers to print parts of the newsletter
-#########################
-
 def print_recipients
-  puts calculate_recipients.join(", ")
-end
-
-def print_subject
-  puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
+  # Write a method that uses the output of calculate_recipients
+  # and returns a list of emails separated by commas
+  # Ex) "abc@email.com, def@email.com, ghi@email.com"
 end
 
 def print_one_article(article)
-  # TODO (Step 4) - format article with title, byline, and text
-  puts "TITLE"
-  puts "by: AUTHOR"
-  puts "TEXT"
-  puts ""
+  # Write a method that will take an article hash
+  # and print the title, author and text as a formatted string
+  # See the README/sample output for examples
 end
 
 def print_many_articles(articles)
-  # TODO (Step 5) - should print all the articles, not just the first one
-  print_one_article(articles.first)
+  # Write a method that will take in an array of article hashes
+  # and format each one using the print_one_article method
 end
-
-def print_newsletter(number)
-  puts "Generating this week's newsletter..."
-  puts ""
-  print "Subject: "
-  print_subject
-  print "Recipients: "
-  print_recipients
-  puts "Body:"
-  puts "#{format_campus_location(CAMPUS)} Newsletter - #{format_week}"
-  articles = first_n_articles(number_of_articles)
-  print_many_articles(articles)
-  puts format_footer(CAMPUS)
-  end
-end
-
-#########################
-# formatting helper methods for printing the newsletter
-#########################
 
 def format_campus_location(campus)
-  # TODO (Step 2) - Fix, not showing name.
   "Flatiron #{campus["name"]}"
 end
 
-def format_week
-  DATE
+def format_subject
+  puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
 end
 
 def format_footer(campus)
-  "Work hard, be nice, and have an epic week! //\n Flatiron School · #{campus[:name]} · #{campus[:address]} "
+  "Flatiron Newsletter · #{campus[:name]} · #{campus[:address]} "
 end
 
-#########################
-# entry point - generates the actual newsletter
-#########################
+def print_newsletter(number)
+  puts "Generating this week's newsletter...\n\n"
 
-def generate_newsletter(input)
-  if input == nil
-    # if there's no input number specified, print just the first 3 articles
-    print_newsletter(3)
-  else
-    # if a number of articles is specified, print that many articles
-    # TODO (Step 6) - Fix, not working 
-    number_of_articles = input
-    print_newsletter(number_of_articles)
+  print "SUBJECT: "
+  format_subject
+
+  print "RECIPIENTS: "
+  print_recipients
+
+  puts "\nBODY:"
+  format_subject
+  articles = first_n_articles(number)
+  print_many_articles(articles)
+  puts format_footer(CAMPUS)
+
   end
 end
 
-# uses the input from the command line to generate the newsletter
 def run
-  # ARGV is an array of strings with the arguments from the command line
-  if ARGV.length < 2
-    generate_newsletter(ARGV[0])
-  else
-    puts "Newsletter maker. \nUsage: ruby newsletter.rb [number]\nOptionally, pass in a number of articles to include in the newsletter"
-  end
+  # We want our program to print three articles by default,
+  # but we can change that number here
+  print_newsletter("3")
 end
 
-# When we run the file from the command line, like
-# $ ruby newsletter.rb
-# call the 'run' method
+# When we run "ruby newsletter.rb" in the command line,
+# the 'run' method will be called because we're calling it below.
 run

@@ -20,13 +20,13 @@ Make edits to `newsletter.rb`. As you do, you can run the code with `ruby newsle
 
 These should be completed in order - each step builds on the previous steps. See below for a more detailed explanation of each step.
 
-1. Fix errors in `newsletter.rb` so that it runs without errors
+1. Fix the errors in `newsletter.rb` so that it runs without errors
 2. Fix the `format_campus_location` method so that it has the correct output
-3. Fix logic error in `calculate_recipients`
-4. Write the body of `print_one_article` to print a string with the formatted article
-5. Write the `print_many_articles` method to print all the articles
-6. Update `generate_newsletter` to work with numeric inputs
-7. Run code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
+3. Write the `calculate_recipients` method to return only the recipients that haven't unsubscribed
+4. Write the `print_recipients` method to print a string with a list of the correct recipients
+5. Write the body of `print_one_article` to print a string with the formatted article
+6. Write the `print_many_articles` method to print all the articles
+7. Run your code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 Feel free to use any debugging tools you've learned in order to solve the challenge. Remember, you may need to add additional code to `newsletter.rb` in order to use tools like `binding.pry`.
 
@@ -43,28 +43,32 @@ As you solve the rest of the tasks, make sure that you can continue to run `ruby
 When you run `ruby newsletter.rb`, the subject line shows
 
 ```txt
-Subject: Flatiron  Newsletter - Jun 13, 2019
+SUBJECT: Flatiron  Newsletter - Nov 20, 2019
 ```
 
 If you check `sample_output.txt`, it shows that the right output should be
 
 ```txt
-Subject: Flatiron Springfield Newsletter - Jun 13, 2019
+SUBJECT: Flatiron DC Newsletter - Nov 20, 2019
 ```
 
-`format_campus_location` should return `"Flatiron Springfield"`. Figure out why it is not working correctly, and fix it. You'll know it's working when the subject line in the output shows correctly.
+`format_campus_location` should return `"Flatiron DC"`. Figure out why it is not working correctly, and fix it. You'll know it's working when the subject line in the output shows correctly.
 
-### 3. Fix logic error in `calculate_recipients`
+### 3. Write the `calculate_recipients` method to return only the recipients that haven't unsubscribed
 
 When people subscribe to the newsletter, they are added to `SUBSCRIBED`. When people unsubscribe from the newsletter, they are added to `UNSUBSCRIBED`. We need to avoid sending the newsletter to anyone who has unsubscribed. `calculate_recipients` should return an array. None of the emails in the `UNSUBSCRIBED` array should appear in the results array returned.
 
-Right now, it's not working. When we run `ruby newsletter.rb`, we can see that `cedricschmidt@robel.io` is getting included in the recipients, despite appearing in the `UNSUBSCRIBED` array.
-
-Figure out why the method is not working and update it so that it works correctly. You can check if your version is working by looking at the output -`cedricschmidt@robel.io` should be gone from the beginning, and the last recipient should be `luiswisoky@mcdermottpadberg.com`.
+You can check if your version is working by looking at the output -`cedricschmidt@robel.io` should be gone from the beginning, and the last recipient should be `bryant@cummingsfisher.biz`. You may need to use debugging tools to check the output, since this method should not print anything.
 
 Your `calculate_recipients` method should return a new array - it should not change the `SUBSCRIBERS` array.
 
-### 4. Write the body of `print_one_article` to print a string with the formatted article
+### 4. Write the `print_recipients` method to print a string with a list of the correct recipients
+
+We want our "RECIPIENTS: " line to include a list of the email addresses of the newsletter's recipients, separated by commas. Use the `calculate_recipients` method to get the correct email addresses, then print and format them in this method.
+
+At this point, you can check your output for the "RECIPIENTS: " line against the `sample_output.txt` file.
+
+### 5. Write the body of `print_one_article` to print a string with the formatted article
 
 Each article has an author, title, and text. Fill in the `print_one_article` method to print the article as a formatted string. It should look like
 
@@ -76,61 +80,15 @@ The orthogonal features, when combined, can explode into complexity.
 
 The title comes first. On the next line is the byline. On the following line is the text of the article.
 
-When your method is working right, you should see the `Mining` article above in the output of `ruby newsletter.rb` instead of
+You may need to write out the `print_many_articles` method in order to ascertain that your output is formatted correctly.
 
-```txt
-TITLE
-by: AUTHOR
-TEXT
-```
+### 6. Write the `print_many_articles` method to print all the articles
 
-### 5. Write the `print_many_articles` method to print all the articles
+The `print_many_articles` should print all the articles passed into the method.  It should use the `print_one_article` to print each article.
 
-The `print_many_articles` should print all the articles passed into the method. As written, it only prints one article - the first article in the `articles` argument. It should print out all of the articles, not just the first one.
-
-Fix the `print_articles` method so that it prints all the articles passed in. It should use the `print_one_article` to print each article.
+### 7. Run your code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 At this point, your output should match the output in `sample_output.txt`
-
-If you'd like to see if there are any differences between the results, you can run `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines of difference between your output and `sample_output.txt`. If there is no difference, no lines will be printed.
-
-### 6. Update `generate_newsletter` to work with numeric inputs
-
-So far, we've run `ruby newsletter.rb` without any inputs, and it has generated a newsletter with 3 articles. If you pass a number to the program on the command line, it should generate a newsletter with that many articles.
-
-For example,
-
-```
-ruby newsletter.rb 5
-```
-
-should generate a newsletter with 5 articles.
-
-Update the `generate_newsletter` method so that it prints the right number of articles when the input is a number.
-
-If the number is larger than the number of the articles, the program should print all of the articles.
-
-If the input is not a number, or if it's less than 1, the program should print `Input should be a number more than 0`. Remember, you can convert a string to a number with `to_i`.
-
-The program should either print this warning, or print a newsletter - not both.
-
-The `run` method already gets the input from the command line and passes it into `generate_newsletter`. You should only need to update the `generate_newsletter` method.
-
-### 7. Run the code and verify that it matches the sample output
-
-Now that your code is supporting different inputs, you'll need to check it against those inputs.
-
-Running `ruby newsletter.rb` should have the same output as `sample_output.txt`. You can check to see if there are any differences between the results by running `diff sample_output.txt <(ruby newsletter.rb)`. That will show the lines that are different between your output and `sample_output.txt`. If there are no differences, no lines will be printed.
-
-Running `ruby newsletter.rb test` should output
-
-```
-Input should be a number more than 0
-```
-
-You should also see the warning output if you run `ruby newsletter.rb -5` or  `ruby newsletter.rb 0`.
-
-Running `ruby newsletter.rb 10` should have the same result that is captured in `10_sample_output.txt`. If you'd like to check this result, you can use `diff 10_sample_output.txt <(ruby newsletter.rb 10)`. Just as before, this will show any lines that are different between your program and the sample output. If there are no differences, no lines will be printed.
 
 **After you check that you are getting the right output, commit your solution.** That way you have a snapshot of your working version before you make any further changes.
 
