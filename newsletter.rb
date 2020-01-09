@@ -1,3 +1,5 @@
+require 'pry'
+
 #########################
 # Data for the newsletter
 #########################
